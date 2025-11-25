@@ -1,0 +1,57 @@
+/* Styles for CSRankings Enhance */
+.csr-enhance-root {
+  position: fixed;
+  top: 80px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 99999;
+}
+.csr-enhance-btn {
+  background: #1f6feb;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.csr-enhance-btn:hover { opacity: 0.95; }
+.csr-enhance-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(0,0,0,0.4);
+  z-index: 99998;
+}
+.csr-enhance-panel {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 980px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+.csr-enhance-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #f6f8fb;
+  border-bottom: 1px solid #eee;
+}
+.csr-enhance-close {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.csr-enhance-content { max-height: 70vh; overflow: auto; padding: 12px; }
+.csr-enhance-table { width: 100%; border-collapse: collapse; }
+.csr-enhance-table th, .csr-enhance-table td { padding: 6px 8px; border-bottom: 1px solid #eee; font-size: 13px; }
+.csr-enhance-table thead th { background: #fafbfc; position: sticky; top: 0; }
