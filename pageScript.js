@@ -52,7 +52,9 @@
           if (!(name in map)) {
             var country = '';
             if (csr.countryAbbrv && rec.dept in csr.countryAbbrv) country = csr.countryAbbrv[rec.dept];
-            map[name] = { name: name, dept: rec.dept || '', country: country, count: 0 };
+            var homepage = '';
+            if (csr.homepages && csr.homepages[name]) homepage = csr.homepages[name];
+            map[name] = { name: name, dept: rec.dept || '', country: country, count: 0, homepage: homepage };
           }
           map[name].count += count;
         }

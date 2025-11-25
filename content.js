@@ -99,7 +99,10 @@
       + '<th>#</th><th>Author</th><th>Affiliation</th><th>Country</th><th>' + (isAdjusted ? 'Adj. Count' : 'Raw Count') + '</th></tr></thead><tbody>';
     let i = 1;
     for (const r of rows) {
-      html += `<tr><td>${i}</td><td>${escapeHtml(r.name)}</td><td>${escapeHtml(r.dept || '')}</td><td>${escapeHtml(r.country || '')}</td><td style="text-align:right">${Number.isInteger(r.count) ? r.count : r.count.toFixed(2)}</td></tr>`;
+      const authorCell = r.homepage
+        ? `<a href="${escapeHtml(r.homepage)}" target="_blank" rel="noopener">${escapeHtml(r.name)}</a>`
+        : escapeHtml(r.name);
+      html += `<tr><td>${i}</td><td>${authorCell}</td><td>${escapeHtml(r.dept || '')}</td><td>${escapeHtml(r.country || '')}</td><td style="text-align:right">${Number.isInteger(r.count) ? r.count : r.count.toFixed(2)}</td></tr>`;
       i++;
     }
     html += '</tbody></table></div>';
